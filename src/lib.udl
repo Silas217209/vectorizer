@@ -1,0 +1,39 @@
+namespace vtracer {
+    string convert(ColorImage img, Config config);
+};
+
+dictionary ColorImage {
+        bytes pixels;
+        u64 width;
+        u64 height;
+    };
+
+    enum ColorMode {
+        "Color",
+        "Binary",
+    };
+
+    enum Hierarchical {
+        "Stacked",
+        "Cutout",
+    };
+
+    enum PathSimplifyMode {
+        "None",
+        "Polygon",
+        "Spline",
+    };
+
+    dictionary Config {
+        ColorMode color_mode;
+        Hierarchical hierarchical;
+        u64 filter_speckle;
+        i32 color_precision;
+        i32 layer_difference;
+        PathSimplifyMode mode;
+        i32 corner_threshold;
+        double length_threshold;
+        u64 max_iterations;
+        i32 splice_threshold;
+        u32? path_precision;
+    };

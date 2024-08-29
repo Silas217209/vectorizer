@@ -1,0 +1,3 @@
+[submodule "crates/vtracer"]
+	path = crates/vtracer
+	url = git@github.com:Silas217209/vtracer.git

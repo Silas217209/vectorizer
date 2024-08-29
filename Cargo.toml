@@ -1,0 +1,21 @@
+[package]
+name = "vectorizer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+visioncortex = "0.8.8"
+vtracer = {path = "crates/vtracer/cmdapp"}
+uniffi = "0.28"
+
+[build-dependencies]
+uniffi = { version = "0.28", features = [ "build" ] }
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+name = "vectorizer" # This is our crate name in this tutorial
+
+[[bin]]
+name = "uniffi-vectorizer"
+path = "src/uniffi-vectorizer.rs"
+
