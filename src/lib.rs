@@ -1,3 +1,6 @@
+uniffi::setup_scaffolding!();
+
+#[derive(uniffi::Record)]
 pub struct ColorImage {
     pub pixels: Vec<u8>,
     pub width: u64,
@@ -13,6 +16,7 @@ impl ColorImage {
     }
 }
 
+#[derive(uniffi::Enum)]
 pub enum ColorMode {
     Color,
     Binary,
@@ -26,6 +30,7 @@ impl ColorMode {
     }
 }
 
+#[derive(uniffi::Enum)]
 pub enum Hierarchical {
     Stacked,
     Cutout,
@@ -39,6 +44,7 @@ impl Hierarchical {
     }
 }
 
+#[derive(uniffi::Enum)]
 pub enum PathSimplifyMode {
     None,
     Polygon,
@@ -54,6 +60,7 @@ impl PathSimplifyMode {
     }
 }
 
+#[derive(uniffi::Record)]
 pub struct Config {
     pub color_mode: ColorMode,
     pub hierarchical: Hierarchical,

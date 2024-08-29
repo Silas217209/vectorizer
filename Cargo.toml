@@ -5,12 +5,18 @@ edition = "2021"
 
 [dependencies]
 visioncortex = {path = "crates/visioncortex"}
-vtracer = {path = "crates/vtracer/cmdapp"}
-uniffi = "0.28"
+vtracer = {path = "crates/vtracer"}
+uniffi = {version = "0.28", features = ["cli"]}
 
 [build-dependencies]
-uniffi = { version = "0.28", features = [ "build" ] }
+uniffi = { version = "0.28", features = [ "build", "cli" ] }
 
 [lib]
 crate-type = ["cdylib", "staticlib"]
 name = "vectorizer" # This is our crate name in this tutorial
+
+[[bin]]
+# This can be whatever name makes sense for your project, but the rest of this tutorial assumes uniffi-bindgen.
+name = "uniffi-vectorizer"
+path = "uniffi-vectorizer.rs"
+
