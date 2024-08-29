@@ -1,3 +1,6 @@
 [submodule "crates/vtracer"]
 	path = crates/vtracer
 	url = git@github.com:Silas217209/vtracer.git
+[submodule "crates/visioncortex"]
+	path = crates/visioncortex
+	url = https://github.com/visioncortex/visioncortex
